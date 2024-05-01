@@ -1,0 +1,108 @@
+@import "_vars";
+@import "_mixins";
+
+.nav {
+  @include centerFlex;
+  background-color: $back-G-header;
+  height: 10rem;
+  margin-bottom: 4rem;
+  gap: 6rem;
+  /* transition: all 0.5s; */
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+
+  .logo {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+
+    div {
+      color: $main-text;
+      line-height: 0.2;
+      &:last-child {
+        font-size: 3rem;
+        letter-spacing: -0.7px;
+        font-weight: 500;
+        &::first-letter {
+          font-size: 5.5rem;
+          margin-right: -0.4rem;
+        }
+      }
+    }
+  }
+
+  &--link {
+    text-decoration: none;
+    color: $main-text;
+    transition: all 0.2s;
+    &:hover,
+    :active {
+      color: $white-text;
+      scale: 1.1;
+    }
+  }
+}
+
+@include dextop {
+  .nav {
+    font-size: 2rem;
+    gap: 3rem;
+  }
+}
+
+@include laptop {
+  .nav {
+    font-size: 1.8rem;
+
+    .logo {
+      position: initial;
+      transform: translate(0, 0);
+    }
+
+    &--link {
+      margin-right: -1rem;
+    }
+  }
+}
+
+@include tablet {
+  .nav {
+    font-size: 1.6rem;
+    gap: 2rem;
+  }
+}
+
+@include mobile {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    gap: 2rem;
+    font-size: 1.5rem;
+
+    .logo {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 20%;
+      top: 50%;
+      div {
+        &:last-child {
+          font-size: 3rem;
+          &::first-letter {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+    &--link {
+      margin-left: 40%;
+    }
+  }
+}

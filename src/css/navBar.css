@@ -1,0 +1,123 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ffd8a8;
+  height: 10rem;
+  margin-bottom: 4rem;
+  gap: 6rem;
+  /* transition: all 0.5s; */
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+}
+.nav .logo {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.nav .logo div {
+  color: #e67700;
+  line-height: 0.2;
+}
+.nav .logo div:last-child {
+  font-size: 3rem;
+  letter-spacing: -0.7px;
+  font-weight: 500;
+}
+.nav .logo div:last-child::first-letter {
+  font-size: 5.5rem;
+  margin-right: -0.4rem;
+}
+.nav--link {
+  text-decoration: none;
+  color: #e67700;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.nav--link:hover,
+.nav--link :active {
+  color: #fff9db;
+  scale: 1.1;
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    font-size: 2rem;
+    gap: 3rem;
+  }
+}
+@media (max-width: 920px) {
+  .nav {
+    font-size: 1.8rem;
+  }
+  .nav .logo {
+    position: initial;
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  .nav--link {
+    margin-right: -1rem;
+  }
+}
+@media (max-width: 800px) {
+  .nav {
+    font-size: 1.6rem;
+    gap: 2rem;
+  }
+}
+@media (max-width: 575px) {
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 20rem;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+  .nav .logo {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    left: 20%;
+    top: 50%;
+  }
+  .nav .logo div:last-child {
+    font-size: 3rem;
+  }
+  .nav .logo div:last-child::first-letter {
+    font-size: 4rem;
+  }
+  .nav--link {
+    margin-left: 40%;
+  }
+}

@@ -1,0 +1,63 @@
+@import "_vars";
+@import "_mixins";
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 2rem;
+  width: 80%;
+  margin: 0 auto;
+
+  p {
+    font-size: 4rem;
+    &::before {
+      content: "На символ ";
+    }
+  }
+  a {
+    transition: all 0.5s;
+  }
+
+  a:link,
+  a:visited {
+    color: $main-text;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:active {
+    color: $main-text-active;
+  }
+
+  .writer {
+    &--name {
+      list-style-type: none;
+
+      &::before {
+        content: "\2022";
+        color: $main-text;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+}
+
+@include laptop {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+    p {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+@include mobile {
+  .categories {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+    p {
+      font-size: 3rem;
+    }
+  }
+}

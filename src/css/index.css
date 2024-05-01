@@ -1,0 +1,460 @@
+@charset "UTF-8";
+@import url("navBar");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: #ffe8cc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+html ::-moz-selection {
+  background-color: #ffd8a8;
+  color: #969191;
+}
+html ::selection {
+  background-color: #ffd8a8;
+  color: #969191;
+}
+html .loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 6rem;
+  color: #e67700;
+}
+
+@media (max-width: 575px) {
+  .loading {
+    left: 50%;
+    top: 70%;
+    font-size: 3rem;
+  }
+}
+#root {
+  background-color: #ffe8cc;
+}
+#root .quote {
+  color: #e67700;
+  width: 75%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4rem;
+}
+#root .quote-item {
+  position: relative;
+  font-size: 2rem;
+  padding: 6rem 10rem;
+  background-color: #fff4e6;
+  border-radius: 14px;
+}
+#root .quote-item div,
+#root .quote-item blockquote {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#root .quote-item div .tags-block,
+#root .quote-item blockquote .tags-block {
+  gap: 2rem;
+}
+#root .quote-item div .tags,
+#root .quote-item blockquote .tags {
+  background-color: none;
+  gap: 2rem;
+}
+#root .quote-item div .tags .tag,
+#root .quote-item blockquote .tags .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1rem;
+  width: 8rem;
+  height: 2rem;
+  text-decoration: none;
+  background-color: #e62a00;
+  color: #fff9db;
+  border-radius: 14px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#root .quote-item div .tags .tag:hover,
+#root .quote-item blockquote .tags .tag:hover {
+  background-color: #e05f42;
+  cursor: pointer;
+}
+#root .quote-item div .quote-num,
+#root .quote-item blockquote .quote-num {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  color: #fff9db;
+  background-color: #ff922b;
+  padding: 2rem 2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+#root .quote-item div button,
+#root .quote-item blockquote button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 4rem;
+  height: 4rem;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+}
+#root .quote-item div button:hover,
+#root .quote-item blockquote button:hover {
+  font-size: 3.5rem;
+  border-radius: 50%;
+}
+#root .quote-item div button:active,
+#root .quote-item blockquote button:active {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 1200px) {
+  #root .quote {
+    width: 85%;
+  }
+  #root .quote-item {
+    padding: 4rem 4rem;
+  }
+}
+@media (max-width: 800px) {
+  #root .quote-item .tags {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    -webkit-column-gap: 1rem;
+       -moz-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+}
+@media (max-width: 575px) {
+  #root .quote {
+    width: 95%;
+  }
+  #root .quote-item {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+  #root .quote-item .main-descr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #root .quote-item .author-block,
+  #root .quote-item .tags-block {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  #root .quote-item .tags {
+    background-color: none;
+  }
+  #root .quote-item .tags .tag {
+    font-size: 1rem;
+    width: 8rem;
+    height: 2rem;
+  }
+  #root .quote-item button {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+.soloQuote {
+  background-color: #fff4e6;
+  border: 2px dashed #e67700;
+  border-radius: 14px;
+  padding: 2rem 6rem;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+.soloQuote blockquote {
+  font-size: 4rem;
+  color: #e67700;
+  font-weight: 400;
+}
+.soloQuote blockquote::after {
+  content: '"';
+}
+.soloQuote blockquote::before {
+  content: 'Quote:  "';
+}
+.soloQuote .author {
+  font-size: 2.5rem;
+  color: #e67700;
+}
+.soloQuote .author::before {
+  content: "Author: ";
+}
+.soloQuote .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+.soloQuote .block .mini-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+.soloQuote .block .mini-block .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+.soloQuote .block .mini-block .tags .tag {
+  color: #fff9db;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-color: #e62a00;
+  border-radius: 14px;
+}
+.soloQuote .block button {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff9db;
+  padding: 2rem 4rem;
+  background-color: #ff922b;
+  border: none;
+  border-radius: 14px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.soloQuote .block button:hover {
+  background-color: #ffa94d;
+}
+.soloQuote .block button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1200px) {
+  .soloQuote blockquote {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 920px) {
+  .soloQuote {
+    padding: 2rem 3rem;
+  }
+  .soloQuote blockquote {
+    font-size: 3rem;
+  }
+  .soloQuote .author {
+    font-size: 2.2rem;
+  }
+  .soloQuote .block .mini-block .tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  .soloQuote .block .mini-block .tags .tag {
+    padding: 0.8rem 1.8rem;
+  }
+  .soloQuote .block button {
+    padding: 1.5rem 2.5rem;
+  }
+}
+@media (max-width: 575px) {
+  .soloQuote {
+    padding: 1rem 1rem;
+    height: 90vh;
+    width: 90%;
+  }
+  .soloQuote blockquote {
+    font-size: 2.8rem;
+  }
+  .soloQuote .author {
+    width: 80%;
+    font-size: 2rem;
+  }
+  .soloQuote .block {
+    position: absolute;
+    width: 100%;
+    bottom: 1%;
+    gap: 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .soloQuote .block .mini-block {
+    gap: 0.2rem;
+  }
+  .soloQuote .block .mini-block .tags {
+    width: 40%;
+    font-size: 1rem;
+  }
+  .soloQuote .block .mini-block .tags .tag {
+    padding: 0.5rem 1rem;
+  }
+  .soloQuote .block button {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+.categories p {
+  font-size: 4rem;
+}
+.categories p::before {
+  content: "На символ ";
+}
+.categories a {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.categories a:link,
+.categories a:visited {
+  color: #e67700;
+  text-decoration: none;
+}
+.categories a:hover,
+.categories a:active {
+  color: #747474;
+}
+.categories .writer--name {
+  list-style-type: none;
+}
+.categories .writer--name::before {
+  content: "•";
+  color: #e67700;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 920px) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .categories p {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 575px) {
+  .categories {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+  }
+  .categories p {
+    font-size: 3rem;
+  }
+}
+.title {
+  text-align: center;
+  color: #e67700;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.btn-delete {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  position: absolute;
+  right: 1%;
+  top: 3rem;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 575px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,158 @@
+@import "_vars";
+@import "_mixins";
+
+.soloQuote {
+  background-color: $back-G-quote;
+  border: 2px dashed $main-text;
+  border-radius: $border-radius-standart;
+  padding: 2rem 6rem;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  blockquote {
+    font-size: 4rem;
+    color: $main-text;
+    font-weight: 400;
+
+    &::after {
+      content: '"';
+    }
+
+    &::before {
+      content: 'Quote:  "';
+    }
+  }
+
+  .author {
+    font-size: 2.5rem;
+    color: $main-text;
+
+    &::before {
+      content: "Author: ";
+    }
+  }
+
+  .block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    .mini-block {
+      display: flex;
+      gap: 2rem;
+
+      .tags {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.5rem;
+
+        .tag {
+          color: $white-text;
+          text-decoration: none;
+          padding: 1rem 2rem;
+          background-color: $back-color-tags;
+          border-radius: $border-radius-standart;
+        }
+      }
+    }
+    button {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $white-text;
+      padding: 2rem 4rem;
+      background-color: $back-G-btns;
+      border: none;
+      border-radius: $border-radius-standart;
+      transition: all 0.5s;
+      cursor: pointer;
+      &:hover {
+        background-color: $back-G-btns-active;
+      }
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+@include dextop {
+  .soloQuote {
+    blockquote {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+@include laptop {
+  .soloQuote {
+    padding: 2rem 3rem;
+    blockquote {
+      font-size: 3rem;
+    }
+
+    .author {
+      font-size: 2.2rem;
+    }
+    .block {
+      .mini-block {
+        .tags {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          .tag {
+            padding: 0.8rem 1.8rem;
+          }
+        }
+      }
+      button {
+        padding: 1.5rem 2.5rem;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .soloQuote {
+    padding: 1rem 1rem;
+    height: 90vh;
+    width: 90%;
+    blockquote {
+      font-size: 2.8rem;
+    }
+
+    .author {
+      width: 80%;
+      font-size: 2rem;
+    }
+
+    .block {
+      position: absolute;
+      width: 100%;
+      bottom: 1%;
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      .mini-block {
+        gap: 0.2rem;
+
+        .tags {
+          width: 40%;
+          font-size: 1rem;
+
+          .tag {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+      button {
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}

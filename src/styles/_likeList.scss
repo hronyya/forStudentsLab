@@ -1,0 +1,26 @@
+@import "_vars";
+@import "_mixins";
+
+.title {
+  text-align: center;
+  color: $main-text;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.btn-delete {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  position: absolute;
+  right: 1%;
+  top: 3rem;
+  transform: translate(-50%, -50%);
+}
+
+@include mobile {
+  .title {
+    font-size: 2.5rem;
+  }
+}

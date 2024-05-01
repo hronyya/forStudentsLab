@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import url("navBar");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: #ffe8cc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+html ::-moz-selection {
+  background-color: #ffd8a8;
+  color: #969191;
+}
+html ::selection {
+  background-color: #ffd8a8;
+  color: #969191;
+}
+html .loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 6rem;
+  color: #e67700;
+}
+
+@media (max-width: 575px) {
+  .loading {
+    left: 50%;
+    top: 70%;
+    font-size: 3rem;
+  }
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+.categories p {
+  font-size: 4rem;
+}
+.categories p::before {
+  content: "На символ ";
+}
+.categories a {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.categories a:link,
+.categories a:visited {
+  color: #e67700;
+  text-decoration: none;
+}
+.categories a:hover,
+.categories a:active {
+  color: #747474;
+}
+.categories .writer--name {
+  list-style-type: none;
+}
+.categories .writer--name::before {
+  content: "•";
+  color: #e67700;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 920px) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .categories p {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 575px) {
+  .categories {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+  }
+  .categories p {
+    font-size: 3rem;
+  }
+}
